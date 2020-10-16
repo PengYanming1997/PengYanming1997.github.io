@@ -17,13 +17,8 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>article</title>
-    <url>/2020/10/16/article/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>-教程</category>
-      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
   </entry>
 </search>
