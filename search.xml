@@ -17,8 +17,11 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
-        <tag>教程</tag>
+        <tag>hexo框架运行个人博客</tag>
       </tags>
   </entry>
 </search>
