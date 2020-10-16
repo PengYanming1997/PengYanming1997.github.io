@@ -20,31 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="记录一些生活中的小想法，以及工作进展 &amp; tricks">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PengYanming1997">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="（1）准备条件 GitHub账号域名(可选)  (2) 新建GitHub项目首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如我的用户名是PengYanming1997，那么就新建一个PengYanming1997.github.io的仓库。  （3）为仓库配置SSH-K">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建个人博客">
+<meta property="og:url" content="http://example.com/2020/10/16/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="PengYanming1997">
-<meta property="og:description" content="记录一些生活中的小想法，以及工作进展 &amp; tricks">
+<meta property="og:description" content="（1）准备条件 GitHub账号域名(可选)  (2) 新建GitHub项目首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如我的用户名是PengYanming1997，那么就新建一个PengYanming1997.github.io的仓库。  （3）为仓库配置SSH-K">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-16T05:49:23.000Z">
+<meta property="article:modified_time" content="2020-10-16T06:29:34.525Z">
 <meta property="article:author" content="ReTinaPeng">
-<meta property="article:tag" content="‘Vue , C++ , LeetCode , Develop-Process’">
+<meta property="article:tag" content="Hexo框架从零搭建个人博客">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/10/16/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>PengYanming1997</title>
+  <title>使用hexo搭建个人博客 | PengYanming1997</title>
   
 
 
@@ -191,9 +193,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -209,10 +212,9 @@
       <meta itemprop="name" content="PengYanming1997">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/16/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">使用hexo搭建个人博客</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          使用hexo搭建个人博客
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -245,7 +247,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>（1）准备条件</p>
+        <p>（1）准备条件</p>
 <p>GitHub账号<br>域名(可选)</p>
 <p> (2) 新建GitHub项目<br>首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如我的用户名是PengYanming1997，那么就新建一个PengYanming1997.github.io的仓库。</p>
 <p> （3）为仓库配置SSH-Key<br>因为后期我们更新文章或者提交代码需要有相应的权限才可以，通过用户名和密码不方便且不安全，所以非常有必要配置SSH-Key密钥。</p>
@@ -332,116 +334,78 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题 <span class="comment"># 自动创建，如 hello-world</span></span><br><span class="line">date: 日期 <span class="comment"># 自动创建，如 2019-09-22 01:47:21</span></span><br><span class="line">tags: </span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br><span class="line">- 标签3</span><br><span class="line">categories:</span><br><span class="line">- 分类1</span><br><span class="line">- 分类2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>开头下方撰写正文，MarkDown 格式书写即可。</p>
 <p>这样在下次编译的时候就会自动识别标题、时间、类别等等，另外还有其他的一些参数设置，可以参考文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing.html%E3%80%82">https://hexo.io/zh-cn/docs/writing.html。</a></p>
-<h1 id="3-博客首页只显示文章标题和摘要"><a href="#3-博客首页只显示文章标题和摘要" class="headerlink" title="3 博客首页只显示文章标题和摘要"></a>3 博客首页只显示文章标题和摘要</h1><p>默认情况下hexo博客(如本站)的首页显示的是完整的文章 – 而文章比较长的时候这无疑会带来诸多不便。只要加入一个
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/16/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+<h1 id="3-博客首页只显示文章标题和摘要"><a href="#3-博客首页只显示文章标题和摘要" class="headerlink" title="3 博客首页只显示文章标题和摘要"></a>3 博客首页只显示文章标题和摘要</h1><p>默认情况下hexo博客(如本站)的首页显示的是完整的文章 – 而文章比较长的时候这无疑会带来诸多不便。只要加入一个<a id="more"></a>这样的占位符在文章正文里面即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这就是一个简介</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这里更多的内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p> （9）标签页<br>现在我们的博客只有首页、文章页，如果我们想要增加标签页，可以自行添加，这里 Hexo 也给我们提供了这个功能，在根目录执行命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>执行这个命令之后会自动帮我们生成一个 source/tags/index.md 文件，内容就只有这样子的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2019-09-27 11:42:49</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>我们可以自行添加一个 type 字段来指定页面的类型：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: tags</span><br><span class="line">comments: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>然后再在主题的 _config.yml 文件将这个页面的链接添加到主菜单里面，修改 menu 字段如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  <span class="comment">#categories: /categories/ || th</span></span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+<p>可以看到左侧导航也出现了标签，点击之后右侧会显示标签的列表。</p>
+<p> （10）分类页<br>分类功能和标签类似，一个文章可以对应某个分类，如果要增加分类页面可以使用如下命令创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">``` </span><br><span class="line">然后同样地，会生成一个 <span class="built_in">source</span>/categories/index.md 文件。</span><br><span class="line"></span><br><span class="line">我们可以自行添加一个 <span class="built_in">type</span> 字段来指定页面的类型：</span><br><span class="line">``` bash</span><br><span class="line"><span class="built_in">type</span>: categories</span><br><span class="line">comments: <span class="literal">false</span></span><br><span class="line">``` </span><br><span class="line">然后再在主题的 _config.yml 文件将这个页面的链接添加到主菜单里面，修改 menu 字段如下：</span><br><span class="line">``` bash</span><br><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+
+<p> （11）搜索页<br>很多情况下我们需要搜索全站的内容，所以一个搜索功能的支持也是很有必要的。</p>
+<p>如果要添加搜索的支持，需要先安装一个插件，叫做 hexo-generator-searchdb，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>然后在项目的 _config.yml 里面添加搜索设置如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure>
+<p>然后在主题的 _config.yml 里面修改如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/wzpan/hexo-generator-search</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  trigger: auto</span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  top_n_per_article: 5</span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  unescape: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  preload: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>这里用的是 Local Search，如果想启用其他是 Search Service 的话可以参考官方文档：<a target="_blank" rel="noopener" href="https://theme-next.org/docs/third-party-services/search-services%E3%80%82">https://theme-next.org/docs/third-party-services/search-services。</a></p>
+<p> （12）404页面<br>另外还需要添加一个 404 页面，直接在根目录 source 文件夹新建一个 404.md 文件即可，内容可以仿照如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404 Not Found</span><br><span class="line">date: 2019-09-27 12:21:37</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;center&gt;</span><br><span class="line">对不起，您所访问的页面不存在或者已删除。</span><br><span class="line">您可以&lt;a href=<span class="string">&quot;https://blog.59devops.com&gt;&quot;</span>&gt;点击此处&lt;/a&gt;返回首页。</span><br><span class="line">&lt;/center&gt;</span><br><span class="line"></span><br><span class="line">&lt;blockquote class=<span class="string">&quot;blockquote-center&quot;</span>&gt;</span><br><span class="line">    59Dveops</span><br><span class="line">&lt;/blockquote&gt;</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">这里面的一些相关信息和链接可以替换成自己的。</span><br><span class="line"></span><br><span class="line">其实 Hexo 还有很多很多功能，可以直接参考官方文档：https://hexo.io/zh-cn/docs/ 查看更多的配置。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> （13）部署脚本</span><br><span class="line"></span><br><span class="line">最后我这边还增加了一个简易版的部署脚本，其实就是重新 gererate 下文件，然后重新部署。在根目录下新建一个 deploy.sh 的脚本文件，内容如下：</span><br><span class="line">``` bash</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>这样我们在部署发布的时候只需要执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+<p>就可以完成博客的更新了，非常简单。</p>
+<p> （14）自定义域名<br>将页面修改之后可以用上面的脚本重新部署下博客，其内容便会跟着更新。</p>
+<p>另外我们也可以在 GitHub 的 Repository 里面设置域名，找到 Settings，拉到下面，可以看到有个 GitHub Pages 的配置项</p>
+<p>下面有个 custom domain 的选项，输入你想自定义的域名地址，然后添加 CNAME 解析就好了。</p>
+<p>另外下面还有一个 Enforce HTTPS 的选项，GitHub Pages 会在我们配置自定义域名之后自动帮我们配置 HTTPS 服务。刚配置完自定义域名的时候可能这个选项是不可用的，一段时间后等到其可以勾选了，直接勾选即可，这样整个博客就会变成 HTTPS 的协议的了。</p>
+<p>另外有一个值得注意的地方，如果配置了自定义域名，在目前的情况下，每次部署的时候这个自定义域名的设置是会被自动清除的。所以为了避免这个情况，我们需要在项目目录下面新建一个 CNAME 文件，路径为 source/CNAME，内容就是自定义域名。</p>
+<p>这样避免了每次部署的时候自定义域名被清除的情况了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo%E6%A1%86%E6%9E%B6%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># Hexo框架从零搭建个人博客</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/16/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ReTinaPeng">
-      <meta itemprop="description" content="记录一些生活中的小想法，以及工作进展 & tricks">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PengYanming1997">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-16 11:14:13 / 修改时间：13:47:10" itemprop="dateCreated datePublished" datetime="2020-10-16T11:14:13+08:00">2020-10-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -488,6 +452,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BA%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="nav-number">1.</span> <span class="nav-text">1 创建密钥对</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90HTML%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">2 编译生成HTML代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">3 部署项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%B0GitHub%E4%BB%93%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">4 上传博客源代码到GitHub仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%BF%AE%E6%94%B9%E7%AB%99%E7%82%B9%E6%A0%87%E9%A2%98%EF%BC%8C%E5%85%B3%E9%94%AE%E5%AD%97%E4%BF%A1%E6%81%AF"><span class="nav-number">5.</span> <span class="nav-text">1 修改站点标题，关键字信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">2 修改主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">3 配置主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE-%EF%BC%9A"><span class="nav-number">8.</span> <span class="nav-text">主题的其他配置 ：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">9.</span> <span class="nav-text">1 新建文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%96%87%E7%AB%A0%E7%9A%84%E6%A0%87%E7%AD%BE%E5%92%8C%E5%88%86%E7%B1%BB"><span class="nav-number">10.</span> <span class="nav-text">2 文章的标签和分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%8D%9A%E5%AE%A2%E9%A6%96%E9%A1%B5%E5%8F%AA%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98%E5%92%8C%E6%91%98%E8%A6%81"><span class="nav-number">11.</span> <span class="nav-text">3 博客首页只显示文章标题和摘要</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -671,6 +636,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '3ddbd7827ed8a60c3faa',
+      clientSecret: 'ad8553ade3be5e9e591c7de699a7a9be32616f51',
+      repo        : 'PengYanming.github.io',
+      owner       : 'PengYanming1997',
+      admin       : ['PengYanming1997'],
+      id          : 'a1aa48123bf9ecf2f0e194ee2ea3107c',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
