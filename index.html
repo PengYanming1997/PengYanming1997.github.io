@@ -197,6 +197,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/16/Oct16th/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ReTinaPeng">
+      <meta itemprop="description" content="记录一些生活中的小想法，以及工作进展 & tricks">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PengYanming1997">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/16/Oct16th/" class="post-title-link" itemprop="url">2020.10.16</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-16 15:43:48 / 修改时间：16:21:31" itemprop="dateCreated datePublished" datetime="2020-10-16T15:43:48+08:00">2020-10-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">每日刷题记录</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="今日刷题类型-：-树结构-深度相关"><a href="#今日刷题类型-：-树结构-深度相关" class="headerlink" title="今日刷题类型 ： 树结构 深度相关"></a>今日刷题类型 ： 树结构 深度相关</h1><p>   剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。 </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(TreeNode* root,<span class="keyword">int</span> temp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span> temp;</span><br><span class="line">        <span class="keyword">return</span> max(height(root-&gt;left,temp + <span class="number">1</span>),height(root-&gt;right,temp + <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">abs</span>(height(root-&gt;left,<span class="number">0</span>) - height(root-&gt;right,<span class="number">0</span>)) &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/16/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +294,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-10-16 13:49:23 / 修改时间：15:11:26" itemprop="dateCreated datePublished" datetime="2020-10-16T13:49:23+08:00">2020-10-16</time>
+              <time title="创建时间：2020-10-16 13:49:23 / 修改时间：15:37:15" itemprop="dateCreated datePublished" datetime="2020-10-16T13:49:23+08:00">2020-10-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,9 +317,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="1-准备条件"><a href="#1-准备条件" class="headerlink" title="(1)准备条件"></a>(1)准备条件</h1><p>GitHub账号<br>域名(可选)</p>
-<h1 id="2-新建GitHub项目"><a href="#2-新建GitHub项目" class="headerlink" title="(2)新建GitHub项目"></a>(2)新建GitHub项目</h1><p>首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如我的用户名是PengYanming1997，那么就新建一个PengYanming1997.github.io的仓库。</p>
-<h1 id="3-为仓库配置SSH-Key"><a href="#3-为仓库配置SSH-Key" class="headerlink" title="(3)为仓库配置SSH-Key"></a>(3)为仓库配置SSH-Key</h1><p>因为后期我们更新文章或者提交代码需要有相应的权限才可以，通过用户名和密码不方便且不安全，所以非常有必要配置SSH-Key密钥。</p>
+          <h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1><p>GitHub账号<br>域名(可选)</p>
+<h1 id="新建GitHub项目"><a href="#新建GitHub项目" class="headerlink" title="新建GitHub项目"></a>新建GitHub项目</h1><p>首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如我的用户名是PengYanming1997，那么就新建一个PengYanming1997.github.io的仓库。</p>
+<h1 id="为仓库配置SSH-Key"><a href="#为仓库配置SSH-Key" class="headerlink" title="为仓库配置SSH-Key"></a>为仓库配置SSH-Key</h1><p>因为后期我们更新文章或者提交代码需要有相应的权限才可以，通过用户名和密码不方便且不安全，所以非常有必要配置SSH-Key密钥。</p>
 <h2 id="1-创建密钥对"><a href="#1-创建密钥对" class="headerlink" title="1 创建密钥对"></a>1 创建密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/. ssh</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
 <p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key.<br>注意的是，在MacBook中可能会存在找不到这个文件的情况，可以直接使用命令行进行文件的复制：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
@@ -258,7 +330,7 @@
 <h2 id="3-配置Git信息"><a href="#3-配置Git信息" class="headerlink" title="3 配置Git信息"></a>3 配置Git信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;PengYanming1997&quot;</span></span><br><span class="line">git config --global user.email  <span class="string">&quot;PengYanming@bupt.edu.cn&quot;</span></span><br></pre></td></tr></table></figure>
 
 
-<h1 id="4-安装环境"><a href="#4-安装环境" class="headerlink" title="(4)安装环境"></a>(4)安装环境</h1><h2 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1 安装Node.js"></a>1 安装Node.js</h2><p>首先在自己的电脑上安装 Node.js，下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%AE%89%E8%A3%85">https://nodejs.org/zh-cn/download/，可以安装</a> Stable 版本。</p>
+<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><h2 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1 安装Node.js"></a>1 安装Node.js</h2><p>首先在自己的电脑上安装 Node.js，下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%AE%89%E8%A3%85">https://nodejs.org/zh-cn/download/，可以安装</a> Stable 版本。</p>
 <p>安装完毕之后，确保环境变量配置好，能正常使用 npm 命令。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --version</span><br></pre></td></tr></table></figure>
 
@@ -271,7 +343,7 @@
 <p>安装完毕之后，确保环境变量配置好，能正常使用 hexo 命令。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo --version</span><br></pre></td></tr></table></figure>
 
-<h1 id="5-初始化项目"><a href="#5-初始化项目" class="headerlink" title="(5)初始化项目"></a>(5)初始化项目</h1><h2 id="1-创建项目"><a href="#1-创建项目" class="headerlink" title="1 创建项目"></a>1 创建项目</h2><p>使用 Hexo 的命令行创建一个项目，并将其在本地跑起来，整体跑通看看。</p>
+<h1 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h1><h2 id="1-创建项目"><a href="#1-创建项目" class="headerlink" title="1 创建项目"></a>1 创建项目</h2><p>使用 Hexo 的命令行创建一个项目，并将其在本地跑起来，整体跑通看看。</p>
 <p>首先使用如下命令创建项目：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#123;name&#125;</span><br></pre></td></tr></table></figure>
 <p>这里的name就是项目名，我这里要创建PengYanming的博客，我就把项目取名为PengYanming了，命令如下：</p>
@@ -286,7 +358,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
 
 <p>项目成功运行在本地的4000端口上，浏览器访问<a href="http://localhost:4000：">http://localhost:4000：</a></p>
-<h1 id="6-部署项目"><a href="#6-部署项目" class="headerlink" title="(6)部署项目"></a>(6)部署项目</h1><p>将这个初始化的博客进行一下部署，放到 GitHub Pages 上面验证一下其可用性。成功之后我们可以再进行后续的修改，比如修改主题、修改页面配置等等。</p>
+<h1 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h1><p>将这个初始化的博客进行一下部署，放到 GitHub Pages 上面验证一下其可用性。成功之后我们可以再进行后续的修改，比如修改主题、修改页面配置等等。</p>
 <p>Hexo 已经给我们提供一个命令，利用它我们可以直接将博客一键部署，不需要手动去配置服务器或进行其他的各项配置。</p>
 <h2 id="1-修改部署地址"><a href="#1-修改部署地址" class="headerlink" title="1 修改部署地址"></a>1 修改部署地址</h2><p>打开根目录下的 _config.yml 文件，找到 Deployment 这个地方，把刚才新建的 Repository 的地址贴过来，然后指定分支为 master 分支，最终修改为如下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/PengYanming1997/PengYanming1997.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 2 安装Git部署插件 </span></span><br><span class="line">需要额外安装一个支持 Git 的部署插件，名字叫做hexo-deployer-git，有了它我们才可以顺利将其部署到 GitHub 上面，如果不安装的话，在执行部署命令时会报如下错误：</span><br><span class="line">``` bash</span><br><span class="line">Deployer not found: git</span><br><span class="line">``` </span><br><span class="line">安装hexo-deployer-git插件的命令如下：</span><br><span class="line">``` bash</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
@@ -301,7 +373,7 @@
 <p>具体的添加过程就很简单了，参考如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init    <span class="comment"># 初始化项目</span></span><br><span class="line">git checkout -b <span class="built_in">source</span>    <span class="comment"># 创建并切换到source分支</span></span><br><span class="line">git add -A    <span class="comment"># 添加所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;init blog&quot;</span>    <span class="comment"># 提交并注释</span></span><br><span class="line">git remote add origin github.com/PengYanming1997/PengYanming1997.github.io.git    <span class="comment"># 添加到远程仓库</span></span><br><span class="line">git push origin <span class="built_in">source</span>    <span class="comment"># 将代码提交到远程的source分支</span></span><br></pre></td></tr></table></figure>
 <p>在GitHub仓库中可以看到已经有两个分支</p>
-<h1 id="7-配置站点信息"><a href="#7-配置站点信息" class="headerlink" title="(7)配置站点信息"></a>(7)配置站点信息</h1><p>完成如上内容之后，实际上我们只完成了博客搭建的一小步，因为我们仅仅是把初始化的页面部署成功了，博客里面还没有设置任何有效的信息。下面就让我们来进行一下博客的基本配置，另外换一个好看的主题，配置一些其他的内容，让博客真正变成属于我们自己的博客吧。</p>
+<h1 id="配置站点信息"><a href="#配置站点信息" class="headerlink" title="配置站点信息"></a>配置站点信息</h1><p>完成如上内容之后，实际上我们只完成了博客搭建的一小步，因为我们仅仅是把初始化的页面部署成功了，博客里面还没有设置任何有效的信息。下面就让我们来进行一下博客的基本配置，另外换一个好看的主题，配置一些其他的内容，让博客真正变成属于我们自己的博客吧。</p>
 <h2 id="1-修改站点标题，关键字信息"><a href="#1-修改站点标题，关键字信息" class="headerlink" title="1 修改站点标题，关键字信息"></a>1 修改站点标题，关键字信息</h2><p>修改根目录下的 _config.yml 文件，找到 Site 区域，这里面可以配置站点标题 title、副标题 subtitle 等内容、关键字 keywords 等内容，比如我的就修改为如下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: PengYanming1997</span><br><span class="line">subtitle: 进阶中的小小程序媛</span><br><span class="line">description: 记录一些生活中的小想法，以及工作进展 &amp; tricks</span><br><span class="line">keywords: <span class="string">&quot;&quot;</span></span><br><span class="line">author: ReTinaPeng</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
 <p>hexo serve在本地运行并在浏览器中打开测试</p>
@@ -363,7 +435,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pjax: <span class="literal">true</span></span><br><span class="line">``` </span><br><span class="line">然后安装依赖库，切换到 next 主题下，然后安装依赖库：</span><br><span class="line">``` bash</span><br><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-pjax <span class="built_in">source</span>/lib/pjax</span><br></pre></td></tr></table></figure>
 <p>这样 pjax 就开启了，页面就可以实现无刷新加载了。</p>
 <h1 id="主题的其他配置-："><a href="#主题的其他配置-：" class="headerlink" title="主题的其他配置 ："></a>主题的其他配置 ：</h1><p>参考官方文档：<a target="_blank" rel="noopener" href="https://theme-next.org/docs/%E3%80%82">https://theme-next.org/docs/。</a></p>
-<h1 id="8-文章"><a href="#8-文章" class="headerlink" title="(8)文章"></a>(8)文章</h1><h2 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1 新建文章"></a>1 新建文章</h2><p>Hexo默认安装完就会有一篇文章，我们需要借助hexo命令添加新的文章：</p>
+<h1 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h1><h2 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1 新建文章"></a>1 新建文章</h2><p>Hexo默认安装完就会有一篇文章，我们需要借助hexo命令添加新的文章：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new hello-hexo</span><br></pre></td></tr></table></figure>
 <p>创建的文章会出现在 source/_posts 文件夹下，是 MarkDown 格式。</p>
 <h2 id="2-文章的标签和分类"><a href="#2-文章的标签和分类" class="headerlink" title="2 文章的标签和分类"></a>2 文章的标签和分类</h2><p>在文章开头通过如下格式添加必要信息：</p>
@@ -422,7 +494,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-10-16 11:14:13 / 修改时间：13:47:10" itemprop="dateCreated datePublished" datetime="2020-10-16T11:14:13+08:00">2020-10-16</time>
+              <time title="创建时间：2020-10-16 11:14:13 / 修改时间：15:36:03" itemprop="dateCreated datePublished" datetime="2020-10-16T11:14:13+08:00">2020-10-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -539,20 +611,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
