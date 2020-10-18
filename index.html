@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-18 09:17:22" itemprop="dateModified" datetime="2020-10-18T09:17:22+08:00">2020-10-18</time>
+                <time title="修改时间：2020-10-18 14:40:05" itemprop="dateModified" datetime="2020-10-18T14:40:05+08:00">2020-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,14 +259,20 @@
 
 <h2 id="剑指-Offer-55-I-二叉树的深度"><a href="#剑指-Offer-55-I-二叉树的深度" class="headerlink" title="剑指 Offer 55 - I. 二叉树的深度"></a>剑指 Offer 55 - I. 二叉树的深度</h2><pre><code class="C++">class Solution &#123;
 public:
-    int height(TreeNode* root,int temp)&#123;
-        if(root == NULL) return temp;
-        return max(height(root-&gt;left,temp + 1),height(root-&gt;right,temp + 1));
+    int ans = 0;
+    void height(TreeNode* root,int temp)&#123;
+        if(root == NULL)&#123;
+            ans = max(ans,temp);
+            return;
+        &#125;
+        height(root-&gt;left,temp + 1);
+        height(root-&gt;right,temp + 1);
+        return;
     &#125;
-    bool isBalanced(TreeNode* root) &#123;
-        if(root == NULL) return true;
-        if(abs(height(root-&gt;left,0) - height(root-&gt;right,0)) &gt; 1) return false;
-        return isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);
+
+    int maxDepth(TreeNode* root) &#123;
+        height(root,0);
+        return ans;
     &#125;
 &#125;;</code></pre>
 
