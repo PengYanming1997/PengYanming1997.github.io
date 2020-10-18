@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="今日刷题类型 ： 树结构 深度相关   剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。  123456789101112class Solution &amp;#123;public:    int height(TreeNode* root,int temp)&amp;#123;        if(root &#x3D;&#x3D; NULL)">
+  <meta name="description" content="今日刷题类型 ： 树结构 深度相关剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。123456789101112class Solution &amp;#123;public:    int height(TreeNode* root,int temp)&amp;#123;        if(root &#x3D;&#x3D; NULL) retu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.10.16">
 <meta property="og:url" content="http://example.com/2020/10/16/Oct16th/index.html">
 <meta property="og:site_name" content="PengYanming1997">
-<meta property="og:description" content="今日刷题类型 ： 树结构 深度相关   剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。  123456789101112class Solution &amp;#123;public:    int height(TreeNode* root,int temp)&amp;#123;        if(root &#x3D;&#x3D; NULL)">
+<meta property="og:description" content="今日刷题类型 ： 树结构 深度相关剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。123456789101112class Solution &amp;#123;public:    int height(TreeNode* root,int temp)&amp;#123;        if(root &#x3D;&#x3D; NULL) retu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-16T07:43:48.000Z">
-<meta property="article:modified_time" content="2020-10-16T08:21:31.603Z">
+<meta property="article:modified_time" content="2020-10-18T01:17:22.947Z">
 <meta property="article:author" content="ReTinaPeng">
 <meta property="article:tag" content="每日刷题记录">
 <meta property="article:tag" content="LeetCode">
@@ -225,10 +225,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-10-16 15:43:48 / 修改时间：16:21:31" itemprop="dateCreated datePublished" datetime="2020-10-16T15:43:48+08:00">2020-10-16</time>
+              <time title="创建时间：2020-10-16 15:43:48" itemprop="dateCreated datePublished" datetime="2020-10-16T15:43:48+08:00">2020-10-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-18 09:17:22" itemprop="dateModified" datetime="2020-10-18T09:17:22+08:00">2020-10-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -254,8 +260,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="今日刷题类型-：-树结构-深度相关"><a href="#今日刷题类型-：-树结构-深度相关" class="headerlink" title="今日刷题类型 ： 树结构 深度相关"></a>今日刷题类型 ： 树结构 深度相关</h1><p>   剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。 </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(TreeNode* root,<span class="keyword">int</span> temp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span> temp;</span><br><span class="line">        <span class="keyword">return</span> max(height(root-&gt;left,temp + <span class="number">1</span>),height(root-&gt;right,temp + <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">abs</span>(height(root-&gt;left,<span class="number">0</span>) - height(root-&gt;right,<span class="number">0</span>)) &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="今日刷题类型-：-树结构-深度相关"><a href="#今日刷题类型-：-树结构-深度相关" class="headerlink" title="今日刷题类型 ： 树结构 深度相关"></a>今日刷题类型 ： 树结构 深度相关</h1><h2 id="剑指-Offer-55-II-平衡二叉树-》-如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。"><a href="#剑指-Offer-55-II-平衡二叉树-》-如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。" class="headerlink" title="剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。"></a>剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(TreeNode* root,<span class="keyword">int</span> temp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span> temp;</span><br><span class="line">        <span class="keyword">return</span> max(height(root-&gt;left,temp + <span class="number">1</span>),height(root-&gt;right,temp + <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">abs</span>(height(root-&gt;left,<span class="number">0</span>) - height(root-&gt;right,<span class="number">0</span>)) &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="剑指-Offer-55-I-二叉树的深度"><a href="#剑指-Offer-55-I-二叉树的深度" class="headerlink" title="剑指 Offer 55 - I. 二叉树的深度"></a>剑指 Offer 55 - I. 二叉树的深度</h2><pre><code class="C++">class Solution &#123;
+public:
+    int height(TreeNode* root,int temp)&#123;
+        if(root == NULL) return temp;
+        return max(height(root-&gt;left,temp + 1),height(root-&gt;right,temp + 1));
+    &#125;
+    bool isBalanced(TreeNode* root) &#123;
+        if(root == NULL) return true;
+        if(abs(height(root-&gt;left,0) - height(root-&gt;right,0)) &gt; 1) return false;
+        return isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);
+    &#125;
+&#125;;</code></pre>
+
     </div>
 
     
@@ -339,7 +358,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%88%B7%E9%A2%98%E7%B1%BB%E5%9E%8B-%EF%BC%9A-%E6%A0%91%E7%BB%93%E6%9E%84-%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3"><span class="nav-number">1.</span> <span class="nav-text">今日刷题类型 ： 树结构 深度相关</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%88%B7%E9%A2%98%E7%B1%BB%E5%9E%8B-%EF%BC%9A-%E6%A0%91%E7%BB%93%E6%9E%84-%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3"><span class="nav-number">1.</span> <span class="nav-text">今日刷题类型 ： 树结构 深度相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%91%E6%8C%87-Offer-55-II-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91-%E3%80%8B-%E5%A6%82%E6%9E%9C%E6%9F%90%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E4%BB%BB%E6%84%8F%E8%8A%82%E7%82%B9%E7%9A%84%E5%B7%A6%E5%8F%B3%E5%AD%90%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%B7%AE%E4%B8%8D%E8%B6%85%E8%BF%871%EF%BC%8C%E9%82%A3%E4%B9%88%E5%AE%83%E5%B0%B1%E6%98%AF%E4%B8%80%E6%A3%B5%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">剑指 Offer 55 - II. 平衡二叉树 -》 如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%91%E6%8C%87-Offer-55-I-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">剑指 Offer 55 - I. 二叉树的深度</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
