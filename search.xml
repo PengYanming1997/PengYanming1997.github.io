@@ -60,6 +60,21 @@ public:
       </tags>
   </entry>
   <entry>
+    <title>第37场双周赛解题思路</title>
+    <url>/2020/10/18/%E7%AC%AC37%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>双周赛</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>C++</tag>
+        <tag>解题思路</tag>
+        <tag>双周赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用hexo搭建个人博客</title>
     <url>/2020/10/16/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1><p>GitHub账号<br>域名(可选)</p>

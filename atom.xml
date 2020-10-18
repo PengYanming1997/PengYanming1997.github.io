@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-18T06:40:05.111Z</updated>
+  <updated>2020-10-18T06:57:17.432Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第37场双周赛解题思路</title>
+    <link href="http://example.com/2020/10/18/%E7%AC%AC37%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/"/>
+    <id>http://example.com/2020/10/18/%E7%AC%AC37%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/</id>
+    <published>2020-10-18T06:55:44.000Z</published>
+    <updated>2020-10-18T06:57:17.432Z</updated>
+    
+    
+    
+    
+    <category term="LeetCode" scheme="http://example.com/categories/LeetCode/"/>
+    
+    <category term="双周赛" scheme="http://example.com/categories/LeetCode/%E5%8F%8C%E5%91%A8%E8%B5%9B/"/>
+    
+    
+    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="解题思路" scheme="http://example.com/tags/%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/"/>
+    
+    <category term="双周赛" scheme="http://example.com/tags/%E5%8F%8C%E5%91%A8%E8%B5%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>2020.10.16</title>
