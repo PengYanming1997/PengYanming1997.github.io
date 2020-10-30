@@ -20,18 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="语义分割方法语义分割 ： 传统方法（已经接近淘汰 性能不行） 和 深度学习方法「获得像素级别的segement map：对每一个像素点进行判断类别」 （1）最初的语义分割 全连接架构 ：    *图像是切成块喂给深度模型的 像素级的分割 对像素进行分类    *使用图像块的主要原因是因为 全连接层 需要固定大小的图像。 （2）全卷积架构（FCN）：    *将网络全连接层用全卷积层取代 因此使任意">
+  <meta name="description" content="各种卷积层的理解 ： 参考链接语义分割方法语义分割 ： 传统方法（已经接近淘汰 性能不行） 和 深度学习方法「获得像素级别的segement map：对每一个像素点进行判断类别」 （1）最初的语义分割 全连接架构 ：    *图像是切成块喂给深度模型的 像素级的分割 对像素进行分类    *使用图像块的主要原因是因为 全连接层 需要固定大小的图像。 （2）全卷积架构（FCN）：    *将网络全连">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语义分割论文总结">
 <meta property="og:url" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="PengYanming1997">
-<meta property="og:description" content="语义分割方法语义分割 ： 传统方法（已经接近淘汰 性能不行） 和 深度学习方法「获得像素级别的segement map：对每一个像素点进行判断类别」 （1）最初的语义分割 全连接架构 ：    *图像是切成块喂给深度模型的 像素级的分割 对像素进行分类    *使用图像块的主要原因是因为 全连接层 需要固定大小的图像。 （2）全卷积架构（FCN）：    *将网络全连接层用全卷积层取代 因此使任意">
+<meta property="og:description" content="各种卷积层的理解 ： 参考链接语义分割方法语义分割 ： 传统方法（已经接近淘汰 性能不行） 和 深度学习方法「获得像素级别的segement map：对每一个像素点进行判断类别」 （1）最初的语义分割 全连接架构 ：    *图像是切成块喂给深度模型的 像素级的分割 对像素进行分类    *使用图像块的主要原因是因为 全连接层 需要固定大小的图像。 （2）全卷积架构（FCN）：    *将网络全连">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/FCN.jpg">
 <meta property="og:image" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/FCNResult.jpg">
 <meta property="og:image" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/deconvolution.jpg">
+<meta property="og:image" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
+<meta property="og:image" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/ASPP.jpg">
+<meta property="og:image" content="http://example.com/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/DeepLabV3+.jpg">
 <meta property="article:published_time" content="2020-10-28T06:26:13.000Z">
-<meta property="article:modified_time" content="2020-10-28T14:55:18.342Z">
+<meta property="article:modified_time" content="2020-10-29T08:28:21.812Z">
 <meta property="article:author" content="ReTinaPeng">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Python">
@@ -228,10 +231,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-10-28 14:26:13 / 修改时间：22:55:18" itemprop="dateCreated datePublished" datetime="2020-10-28T14:26:13+08:00">2020-10-28</time>
+              <time title="创建时间：2020-10-28 14:26:13" itemprop="dateCreated datePublished" datetime="2020-10-28T14:26:13+08:00">2020-10-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-29 16:28:21" itemprop="dateModified" datetime="2020-10-29T16:28:21+08:00">2020-10-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -257,10 +266,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="语义分割方法"><a href="#语义分割方法" class="headerlink" title="语义分割方法"></a>语义分割方法</h1><p>语义分割 ： 传统方法（已经接近淘汰 性能不行） 和 深度学习方法「获得像素级别的segement map：对每一个像素点进行判断类别」</p>
+        <h1 id="各种卷积层的理解-：-参考链接"><a href="#各种卷积层的理解-：-参考链接" class="headerlink" title="各种卷积层的理解 ： 参考链接"></a>各种卷积层的理解 ： <a target="_blank" rel="noopener" href="https://blog.csdn.net/gwplovekimi/article/details/89890510#%E6%B7%B1%E5%BA%A6%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF%EF%BC%88depthwise%20separable%20convolution%EF%BC%89">参考链接</a></h1><h1 id="语义分割方法"><a href="#语义分割方法" class="headerlink" title="语义分割方法"></a>语义分割方法</h1><p>语义分割 ： 传统方法（已经接近淘汰 性能不行） 和 深度学习方法「获得像素级别的segement map：对每一个像素点进行判断类别」</p>
 <p>（1）最初的语义分割 全连接架构 ：<br>    *图像是切成块喂给深度模型的 像素级的分割 对像素进行分类<br>    *使用图像块的主要原因是因为 全连接层 需要固定大小的图像。</p>
 <p>（2）全卷积架构（FCN）：<br>    *将网络全连接层用全卷积层取代 因此使任意图像大小的输入都变成可能<br>    *速度比Patch classification方法快很多<br>    *下采样操作 使得分辨率降低 削弱了位置信息 而语义分割中需要score map和原图对齐 因此需要丰富的位置信息「pooling池化操作是典型的下采样 其功能是扩大感受野因而能够很好地整合上下文信息 通俗的理解就是综合了更多的信息来进行决策」</p>
-<p>（3）encoder-decoder架构 ：<br>     *针对之前的pooling产生的问题提出的<br>     *整体结构是先下采样再逐渐恢复 encoder由于pooling逐渐减少空间维度，而decoder逐渐恢复空间维度和细节信息。<br>     *通常从encoder到decoder还有shortcut connetction（捷径连接，也就是跨层连接）U-Net系列</p>
+<p>（3）encoder-decoder架构 ：<br>     *针对之前的pooling产生的问题提出的<br>     *整体结构是先下采样再逐渐恢复 encoder由于pooling逐渐减少空间维度，而decoder逐渐恢复空间维度和细节信息。<br>     *通常从encoder到decoder还有shortcut connetction（捷径连接，也就是跨层连接）U-Net系列<br>     *可以更好的恢复边缘信息</p>
 <p>（4）空洞卷积架构 （dilated/atrous） ：<br>     *这种结构 从根本上代替了pooling<br>     *可以保持空间分辨率，又可以扩大感受野因而可以很好地整合上下文信息。</p>
 <p>（5）条件随机场（CRFs）：<br>     *对分割结果进行后处理来改善效果 DeepLab系列文章使用的就是这种方法</p>
 <h1 id="语义分割各架构经典论文整理"><a href="#语义分割各架构经典论文整理" class="headerlink" title="语义分割各架构经典论文整理"></a>语义分割各架构经典论文整理</h1><h2 id="FCN架构-全卷积网络-："><a href="#FCN架构-全卷积网络-：" class="headerlink" title="FCN架构 全卷积网络 ："></a>FCN架构 全卷积网络 ：</h2><p> (1)使端对端的卷积语义分割网络变得流行起来。<br> (2)通过deconvolutional layers进行上采样。upsampling的意义在于将小尺寸的高维度feature map恢复回去，以便做pixelwise prediction，获得每个点的分类信息。=》 其实相当于一个Encode-Decode的过程。<br> (3)通过skip connection特征融合改善了上采样的粗糙度。使用的特征融合方式 ： 逐点相加 tf.add()</p>
@@ -270,7 +279,10 @@
 <p>FCN中的几点问题：<br> (1) 在conv1_1中添加了pad=100 原因 =》 经过多次pool得到的feature图缩小了32倍 如果不在conv1_1加入pad=100 那么对于小于192x192的输入图像 在反卷积恢复尺寸前已经feature map size = 0 所以在conv1_1添加pad=100的方法 解决输入图像大小的问题但是实际也引入很大的噪声</p>
 <p> (2) 由于引入了pad=100 同时fc6卷积层也会改变feature map尺寸 那么真实的网络就不可能像原理图那样“完美1/2” 「即不能直接上采样 就可以逐点相加」解决方案 =》 引入crop层 axis参数指定从第几维往后开始裁剪  offset参数指定crop在height和width纬度的开始点</p>
 <h2 id="U-Net-encoder-decoder架构-："><a href="#U-Net-encoder-decoder架构-：" class="headerlink" title="U-Net encoder-decoder架构 ："></a>U-Net encoder-decoder架构 ：</h2><p> (1)先下采样 后上采样 =》 使用的特征融合方式 ： 拼接 tf.concat()</p>
-<h2 id="空洞卷积架构-Dilated-convolution-："><a href="#空洞卷积架构-Dilated-convolution-：" class="headerlink" title="空洞卷积架构 Dilated convolution ："></a>空洞卷积架构 Dilated convolution ：</h2><h1 id="CVPR2020-语义分割论文整理"><a href="#CVPR2020-语义分割论文整理" class="headerlink" title="CVPR2020 语义分割论文整理"></a>CVPR2020 语义分割论文整理</h1>
+<p> (2)使用全卷积网络结构或是下采样的缺陷造成了分类问题出现了瓶颈 ： 主要缺陷一个是层级信息的丢失（跨层连接）；还有一个是小物体信息无法重建（下采样之后信息会丢失 即使反卷积也无法恢复）；再有一个是「池化层」不可学</p>
+<h2 id="空洞卷积架构-Dilated-Atrous-convolution-："><a href="#空洞卷积架构-Dilated-Atrous-convolution-：" class="headerlink" title="空洞卷积架构 Dilated/Atrous convolution ："></a>空洞卷积架构 Dilated/Atrous convolution ：</h2><p> (1)在卷积核中添加空洞 空洞的地方填充0 不添加多余的参数且不使用pooling下采样（可能丢失部分信息）的同时 扩大了感受野<br> (2)网络架构有两种，一种是前端网络，另外一种是前端网络+上下文模块 =&gt; 上下文模块中级联了多种不同空洞率的空洞卷积，使得多尺度的上下文信息可以得到整合，从而改善前端网络预测的效果。需要注意的是前端网络和上下文模块是分开训练的，如果是联合在一起进行端对端的训练并不能改善性能。<br> (3)网络输出的分割图并不是和原始图像大小一样的，而是其1/8，需要对输出的分割图进行线性插值才能得到最终的分割结果。<br> (4)优势总结 ： 不添加多余参数 保证了特征映射的分辨率 可以获得更大的感受野<br> (5)存在的问题：<br>   空洞卷积到某一层之后 邻近的像素将会是从完全独立的子集中卷积得到了 相互之间缺乏相关性 =》 即局部信息丢失<br>   空洞卷积是稀疏采样 =》远距离获取的信息没有相关性 影响结果<br> (6)其卷积层的原理示意图：<br><img src="/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="语义分割论文总结"></p>
+<h2 id="DeepLab系列-条件随机场架构-CRFs-："><a href="#DeepLab系列-条件随机场架构-CRFs-：" class="headerlink" title="DeepLab系列 条件随机场架构 CRFs ："></a>DeepLab系列 条件随机场架构 CRFs ：</h2><p> (1)stride是特征图分辨率变小的主要原因 而设置stride&gt;1主要是为了增加感受野<br>    Deeplab中将stride设置成为1 使用空洞卷积达到增加感受野的效果（V1）<br> (2)条件随机场CFRs =》 在传统图像处理上做一个平滑 在决定一个位置的像素值时，能够考虑周围邻居的像素值，消除一些噪音（V1&amp;V2）<br> (3)针对多尺度融合提出结构 =》 ASPP「使用多尺度进行空洞卷积，在经过1<em>1的卷积之后连接起来」（V2） 结构示意图：<br><img src="/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/ASPP.jpg" alt="语义分割论文总结"><br> (4)ASPP结构的改进（V3）=》添加了一个1</em>1的卷积和一个全局的平均池化(Image Pooling)<br> (5)HDC思想 =》锯齿形大小的空洞卷积步长stride [1,2,1]的rate<br> (6)Xception backbone（V3+） 添加了BN和ReLu层<br> (7)DeepLabV3+网络的整体结构图：<br><img src="/2020/10/28/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/DeepLabV3+.jpg" alt="语义分割论文总结"></p>
+<h1 id="CVPR2020-语义分割论文整理"><a href="#CVPR2020-语义分割论文整理" class="headerlink" title="CVPR2020 语义分割论文整理"></a>CVPR2020 语义分割论文整理</h1>
     </div>
 
     
@@ -353,7 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">语义分割方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E5%90%84%E6%9E%B6%E6%9E%84%E7%BB%8F%E5%85%B8%E8%AE%BA%E6%96%87%E6%95%B4%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">语义分割各架构经典论文整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN%E6%9E%B6%E6%9E%84-%E5%85%A8%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C-%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">FCN架构 全卷积网络 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U-Net-encoder-decoder%E6%9E%B6%E6%9E%84-%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">U-Net encoder-decoder架构 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF%E6%9E%B6%E6%9E%84-Dilated-convolution-%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">空洞卷积架构 Dilated convolution ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CVPR2020-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%95%B4%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">CVPR2020 语义分割论文整理</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E5%B1%82%E7%9A%84%E7%90%86%E8%A7%A3-%EF%BC%9A-%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">各种卷积层的理解 ： 参考链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">语义分割方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E5%90%84%E6%9E%B6%E6%9E%84%E7%BB%8F%E5%85%B8%E8%AE%BA%E6%96%87%E6%95%B4%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">语义分割各架构经典论文整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN%E6%9E%B6%E6%9E%84-%E5%85%A8%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C-%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">FCN架构 全卷积网络 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U-Net-encoder-decoder%E6%9E%B6%E6%9E%84-%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">U-Net encoder-decoder架构 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF%E6%9E%B6%E6%9E%84-Dilated-Atrous-convolution-%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">空洞卷积架构 Dilated&#x2F;Atrous convolution ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepLab%E7%B3%BB%E5%88%97-%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA%E6%9E%B6%E6%9E%84-CRFs-%EF%BC%9A"><span class="nav-number">3.4.</span> <span class="nav-text">DeepLab系列 条件随机场架构 CRFs ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CVPR2020-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87%E6%95%B4%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">CVPR2020 语义分割论文整理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
