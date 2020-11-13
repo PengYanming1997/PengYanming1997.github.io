@@ -20,18 +20,25 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="记录一些生活中的小想法，以及工作进展 &amp; tricks">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PengYanming1997">
-<meta property="og:url" content="http://example.com/tags/%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
+  <meta name="description" content="人体面部表情迁移 生成图像动画 近些年相关的论文总结相关工作 ： 视频生成  ，  图像动画NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来本篇论文的目标：从源图像中提取的外观，将其与从驱动视频中提取出的运动模式结合起来，从而合成新的视频 传统做法（之前所使用的方法）：使用GAN&#x2F;VAE模型转移面部表情和运">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面部表情迁移">
+<meta property="og:url" content="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/index.html">
 <meta property="og:site_name" content="PengYanming1997">
-<meta property="og:description" content="记录一些生活中的小想法，以及工作进展 &amp; tricks">
+<meta property="og:description" content="人体面部表情迁移 生成图像动画 近些年相关的论文总结相关工作 ： 视频生成  ，  图像动画NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来本篇论文的目标：从源图像中提取的外观，将其与从驱动视频中提取出的运动模式结合起来，从而合成新的视频 传统做法（之前所使用的方法）：使用GAN&#x2F;VAE模型转移面部表情和运">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/demo.gif">
+<meta property="og:image" content="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/example.jpg">
+<meta property="article:published_time" content="2020-11-12T06:35:29.000Z">
+<meta property="article:modified_time" content="2020-11-13T00:14:22.549Z">
 <meta property="article:author" content="ReTinaPeng">
-<meta property="article:tag" content="‘Vue , C++ , LeetCode , Develop-Process’">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="毕设">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/demo.gif">
 
-<link rel="canonical" href="http://example.com/tags/%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">
+<link rel="canonical" href="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/">
 
 
 <script id="page-configurations">
@@ -39,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 每日刷题记录 | PengYanming1997</title>
+  <title>面部表情迁移 | PengYanming1997</title>
   
 
 
@@ -191,77 +198,117 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">每日刷题记录
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ReTinaPeng">
+      <meta itemprop="description" content="记录一些生活中的小想法，以及工作进展 & tricks">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PengYanming1997">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面部表情迁移
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-12 14:35:29" itemprop="dateCreated datePublished" datetime="2020-11-12T14:35:29+08:00">2020-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 08:14:22" itemprop="dateModified" datetime="2020-11-13T08:14:22+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/CV/" itemprop="url" rel="index"><span itemprop="name">CV</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/CV/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%88%9B%E6%96%B0%E7%82%B9%E8%B0%83%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">毕业设计创新点调研</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-19T14:38:48+08:00"
-              content="2020-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/19/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url">
-            <span itemprop="name">每日一题</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-16T15:43:48+08:00"
-              content="2020-10-16">
-          10-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/16/%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3/" itemprop="url">
-            <span itemprop="name">树的深度相关</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h2 id="人体面部表情迁移-生成图像动画-近些年相关的论文总结"><a href="#人体面部表情迁移-生成图像动画-近些年相关的论文总结" class="headerlink" title="人体面部表情迁移 生成图像动画 近些年相关的论文总结"></a>人体面部表情迁移 生成图像动画 近些年相关的论文总结</h2><h2 id="相关工作-：-视频生成-，-图像动画"><a href="#相关工作-：-视频生成-，-图像动画" class="headerlink" title="相关工作 ： 视频生成  ，  图像动画"></a>相关工作 ： 视频生成  ，  图像动画</h2><h3 id="NeurIPS-2019-「First-Order-Motion-Model-for-Image-Animation」-让「静态图片」动起来"><a href="#NeurIPS-2019-「First-Order-Motion-Model-for-Image-Animation」-让「静态图片」动起来" class="headerlink" title="NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来"></a>NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来</h3><p><img src="/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/demo.gif" alt="面部表情迁移"><br>本篇论文的目标：从源图像中提取的外观，将其与从驱动视频中提取出的运动模式结合起来，从而合成新的视频</p>
+<p>传统做法（之前所使用的方法）：使用GAN/VAE模型转移面部表情和运动模式<br>=》 缺点：通常依靠预先训练好的模型来提取特定对象的表示，这些预训练好的模型需要使用昂贵的ground-truth数据注释来构建，不能用于任意对象类别<br>=》 为了解决这个问题 提出了「Monkey-Net」模型<br>=》 Monkey-Net模型是第一个面向对象的图像动画深度模型，使用的解决方法：自监督的方式对关键点信息进行学习，根据在驱动视频中估计的关键点轨迹对源图像进行动画处理<br>=》 Monkey-Net模型的主要弱点：在假定为零阶模型的情况下，它很难对关键点邻域中的对象外观变换进行建模，导致在物体姿态变化很大的情况下生成质量较差 效果图如下：<br><img src="/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/example.jpg" alt="面部表情迁移"></p>
+<p>本篇论文提出的创新：<br>=》 针对Monkey-Net的弱点进行改进—-提出一阶运动模型 「使用一组自学习的关键点和局部仿射变换」来建模复杂的运动<br>这是本文与 「Monkey-Net」的不同之处<br>=》 增加了遮挡感知生成器—–生成驱动视频中被遮挡的部分（在大幅度的运动模式下被遮挡是常见的现象）<br>=》 改进了关键点检测器训练中常用的「等方差损失」<br>=》 发布了一个新的高分辨率数据集——Thai-Chi-HD（太极动作数据集）</p>
+<p>本篇论文的相关工作及与其不同的地方：<br>=》 视频生成 ： Same「使用扭曲公式生成视频序列」 &amp; Different「空间变形不来自于预测 而是来自于驱动视频」<br>这是本文与 「X2face」的相似和不同之处<br>=》 图像动画 ： 传统的都是针对特定任务的设计的，如「3D人脸模型」，使得模型具有局限针对性<br>             本篇论文的方法摆脱了上面说的这种依赖 且可以应用到同类别的任何对象。</p>
+<p>本篇论文与之前比较流行的两种方法 ： 「X2face」 &amp; 「Monkey-Net」有相似也有不同的地方</p>
+<p>本篇论文效果总结：<br>=》 可以处理高分辨率数据集 方法明显优于之前最先进的图像动画方法</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E6%AF%95%E8%AE%BE/" rel="tag"># 毕设</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/03/%E7%AC%AC38%E5%91%A8%E5%8F%8C%E5%91%A8%E8%B5%9B/" rel="prev" title="第38周双周赛">
+      <i class="fa fa-chevron-left"></i> 第38周双周赛
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -308,6 +355,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E4%BD%93%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB-%E7%94%9F%E6%88%90%E5%9B%BE%E5%83%8F%E5%8A%A8%E7%94%BB-%E8%BF%91%E4%BA%9B%E5%B9%B4%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">人体面部表情迁移 生成图像动画 近些年相关的论文总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C-%EF%BC%9A-%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90-%EF%BC%8C-%E5%9B%BE%E5%83%8F%E5%8A%A8%E7%94%BB"><span class="nav-number">2.</span> <span class="nav-text">相关工作 ： 视频生成  ，  图像动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NeurIPS-2019-%E3%80%8CFirst-Order-Motion-Model-for-Image-Animation%E3%80%8D-%E8%AE%A9%E3%80%8C%E9%9D%99%E6%80%81%E5%9B%BE%E7%89%87%E3%80%8D%E5%8A%A8%E8%B5%B7%E6%9D%A5"><span class="nav-number">2.1.</span> <span class="nav-text">NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -491,6 +539,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '3ddbd7827ed8a60c3faa',
+      clientSecret: 'ad8553ade3be5e9e591c7de699a7a9be32616f51',
+      repo        : 'PengYanming.github.io',
+      owner       : 'PengYanming1997',
+      admin       : ['PengYanming1997'],
+      id          : '9e1e92d658930e0296375dbeee50c281',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>

@@ -197,6 +197,93 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ReTinaPeng">
+      <meta itemprop="description" content="记录一些生活中的小想法，以及工作进展 & tricks">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PengYanming1997">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/" class="post-title-link" itemprop="url">面部表情迁移</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-12 14:35:29" itemprop="dateCreated datePublished" datetime="2020-11-12T14:35:29+08:00">2020-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 08:14:22" itemprop="dateModified" datetime="2020-11-13T08:14:22+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/CV/" itemprop="url" rel="index"><span itemprop="name">CV</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/CV/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%88%9B%E6%96%B0%E7%82%B9%E8%B0%83%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">毕业设计创新点调研</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="人体面部表情迁移-生成图像动画-近些年相关的论文总结"><a href="#人体面部表情迁移-生成图像动画-近些年相关的论文总结" class="headerlink" title="人体面部表情迁移 生成图像动画 近些年相关的论文总结"></a>人体面部表情迁移 生成图像动画 近些年相关的论文总结</h2><h2 id="相关工作-：-视频生成-，-图像动画"><a href="#相关工作-：-视频生成-，-图像动画" class="headerlink" title="相关工作 ： 视频生成  ，  图像动画"></a>相关工作 ： 视频生成  ，  图像动画</h2><h3 id="NeurIPS-2019-「First-Order-Motion-Model-for-Image-Animation」-让「静态图片」动起来"><a href="#NeurIPS-2019-「First-Order-Motion-Model-for-Image-Animation」-让「静态图片」动起来" class="headerlink" title="NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来"></a>NeurIPS 2019 「First Order Motion Model for Image Animation」 让「静态图片」动起来</h3><p><img src="/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/demo.gif" alt="面部表情迁移"><br>本篇论文的目标：从源图像中提取的外观，将其与从驱动视频中提取出的运动模式结合起来，从而合成新的视频</p>
+<p>传统做法（之前所使用的方法）：使用GAN/VAE模型转移面部表情和运动模式<br>=》 缺点：通常依靠预先训练好的模型来提取特定对象的表示，这些预训练好的模型需要使用昂贵的ground-truth数据注释来构建，不能用于任意对象类别<br>=》 为了解决这个问题 提出了「Monkey-Net」模型<br>=》 Monkey-Net模型是第一个面向对象的图像动画深度模型，使用的解决方法：自监督的方式对关键点信息进行学习，根据在驱动视频中估计的关键点轨迹对源图像进行动画处理<br>=》 Monkey-Net模型的主要弱点：在假定为零阶模型的情况下，它很难对关键点邻域中的对象外观变换进行建模，导致在物体姿态变化很大的情况下生成质量较差 效果图如下：<br><img src="/2020/11/12/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E8%BF%81%E7%A7%BB/example.jpg" alt="面部表情迁移"></p>
+<p>本篇论文提出的创新：<br>=》 针对Monkey-Net的弱点进行改进—-提出一阶运动模型 「使用一组自学习的关键点和局部仿射变换」来建模复杂的运动<br>这是本文与 「Monkey-Net」的不同之处<br>=》 增加了遮挡感知生成器—–生成驱动视频中被遮挡的部分（在大幅度的运动模式下被遮挡是常见的现象）<br>=》 改进了关键点检测器训练中常用的「等方差损失」<br>=》 发布了一个新的高分辨率数据集——Thai-Chi-HD（太极动作数据集）</p>
+<p>本篇论文的相关工作及与其不同的地方：<br>=》 视频生成 ： Same「使用扭曲公式生成视频序列」 &amp; Different「空间变形不来自于预测 而是来自于驱动视频」<br>这是本文与 「X2face」的相似和不同之处<br>=》 图像动画 ： 传统的都是针对特定任务的设计的，如「3D人脸模型」，使得模型具有局限针对性<br>             本篇论文的方法摆脱了上面说的这种依赖 且可以应用到同类别的任何对象。</p>
+<p>本篇论文与之前比较流行的两种方法 ： 「X2face」 &amp; 「Monkey-Net」有相似也有不同的地方</p>
+<p>本篇论文效果总结：<br>=》 可以处理高分辨率数据集 方法明显优于之前最先进的图像动画方法</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/03/%E7%AC%AC38%E5%91%A8%E5%8F%8C%E5%91%A8%E8%B5%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -653,7 +740,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-12 10:24:19" itemprop="dateModified" datetime="2020-11-12T10:24:19+08:00">2020-11-12</time>
+                <time title="修改时间：2020-11-13 08:44:25" itemprop="dateModified" datetime="2020-11-13T08:44:25+08:00">2020-11-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -735,7 +822,9 @@
 
 <h2 id="514-自由之路-2020-11-11"><a href="#514-自由之路-2020-11-11" class="headerlink" title="514. 自由之路.  2020.11.11"></a>514. 自由之路.  2020.11.11</h2><h3 id="解题思路-：-回溯找到从头寻找和从尾寻找的每一步相加所得到的ans值也就是路径长度-找到最小的最优解-》-局部的最优解不一定就能达到全局的最优解-这就是需要将所有答案列出来进行比较的原因-gt-深度优先搜索算法-遍历所有结果"><a href="#解题思路-：-回溯找到从头寻找和从尾寻找的每一步相加所得到的ans值也就是路径长度-找到最小的最优解-》-局部的最优解不一定就能达到全局的最优解-这就是需要将所有答案列出来进行比较的原因-gt-深度优先搜索算法-遍历所有结果" class="headerlink" title="解题思路 ： 回溯找到从头寻找和从尾寻找的每一步相加所得到的ans值也就是路径长度 找到最小的最优解 =》 局部的最优解不一定就能达到全局的最优解 这就是需要将所有答案列出来进行比较的原因 =&gt; 深度优先搜索算法 遍历所有结果"></a>解题思路 ： 回溯找到从头寻找和从尾寻找的每一步相加所得到的ans值也就是路径长度 找到最小的最优解 =》 局部的最优解不一定就能达到全局的最优解 这就是需要将所有答案列出来进行比较的原因 =&gt; 深度优先搜索算法 遍历所有结果</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; memo;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findRotateSteps</span><span class="params">(<span class="built_in">string</span> ring, <span class="built_in">string</span> key)</span> </span>&#123;</span><br><span class="line">    memo.assign(ring.size(), <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (key.size(), <span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">return</span> dfs(ring, <span class="number">0</span>, key, <span class="number">0</span>) + key.size();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="built_in">string</span> ring, <span class="keyword">int</span> i, <span class="built_in">string</span> key, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// base case</span></span><br><span class="line">    <span class="keyword">if</span> (j == key.size()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (memo[i][j] != <span class="number">-1</span>) <span class="keyword">return</span> memo[i][j];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在右边找</span></span><br><span class="line">    <span class="keyword">int</span> right_step;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt; ring.size(); p++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ring[(i + p) % ring.size()] == key[j]) &#123;</span><br><span class="line">            right_step = dfs(ring, (i + p) % ring.size(), key, j + <span class="number">1</span>) + p;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 在左边找</span></span><br><span class="line">    <span class="keyword">int</span> left_step;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt; ring.size(); p++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i - p &gt;= <span class="number">0</span> &amp;&amp; ring[i - p] == key[j]) &#123;</span><br><span class="line">            left_step = dfs(ring, i - p, key, j + <span class="number">1</span>) + p;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i - p &lt; <span class="number">0</span> &amp;&amp; ring[ring.size() - <span class="built_in">abs</span>(i - p)] == key[j]) &#123;</span><br><span class="line">            left_step = dfs(ring, ring.size() - <span class="built_in">abs</span>(i - p), key, j + <span class="number">1</span>) + p;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    memo[i][j] = min(left_step, right_step);</span><br><span class="line">    <span class="keyword">return</span> memo[i][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="922-按奇偶排序数组-II-2020-11-12-遍历一次即可得-没啥特别的-定义双指针分别指向奇偶元素下标"><a href="#922-按奇偶排序数组-II-2020-11-12-遍历一次即可得-没啥特别的-定义双指针分别指向奇偶元素下标" class="headerlink" title="922. 按奇偶排序数组 II.  2020.11.12 遍历一次即可得 没啥特别的 定义双指针分别指向奇偶元素下标"></a>922. 按奇偶排序数组 II.  2020.11.12 遍历一次即可得 没啥特别的 定义双指针分别指向奇偶元素下标</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sortArrayByParityII</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">ans</span><span class="params">(A.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> odd = <span class="number">1</span>; <span class="comment">// 奇数index</span></span><br><span class="line">        <span class="keyword">int</span> even = <span class="number">0</span>; <span class="comment">// 偶数index</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;A.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i] % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                ans[even] = A[i];</span><br><span class="line">                even += <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans[odd] = A[i];</span><br><span class="line">                odd += <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="922-按奇偶排序数组-II-2020-11-12"><a href="#922-按奇偶排序数组-II-2020-11-12" class="headerlink" title="922. 按奇偶排序数组 II.  2020.11.12"></a>922. 按奇偶排序数组 II.  2020.11.12</h2><h3 id="遍历一次即可得-定义双指针分别指向奇偶元素下标"><a href="#遍历一次即可得-定义双指针分别指向奇偶元素下标" class="headerlink" title="遍历一次即可得 定义双指针分别指向奇偶元素下标"></a>遍历一次即可得 定义双指针分别指向奇偶元素下标</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sortArrayByParityII</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">ans</span><span class="params">(A.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> odd = <span class="number">1</span>; <span class="comment">// 奇数index</span></span><br><span class="line">        <span class="keyword">int</span> even = <span class="number">0</span>; <span class="comment">// 偶数index</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;A.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i] % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                ans[even] = A[i];</span><br><span class="line">                even += <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans[odd] = A[i];</span><br><span class="line">                odd += <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="328-奇偶链表-2020-11-13"><a href="#328-奇偶链表-2020-11-13" class="headerlink" title="328. 奇偶链表.  2020.11.13"></a>328. 奇偶链表.  2020.11.13</h2><h3 id="遍历一次即可得-继续使用双指针方法-分别指向奇偶节点编号"><a href="#遍历一次即可得-继续使用双指针方法-分别指向奇偶节点编号" class="headerlink" title="遍历一次即可得 继续使用双指针方法 分别指向奇偶节点编号"></a>遍历一次即可得 继续使用双指针方法 分别指向奇偶节点编号</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//  使用原地算法</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">oddEvenList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span> || head-&gt;next == <span class="literal">NULL</span>) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode* newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode* temp = newHead;</span><br><span class="line">        ListNode* fast = head;</span><br><span class="line">        ListNode* slow = head-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(fast != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            temp-&gt;next = <span class="keyword">new</span> ListNode(fast-&gt;val);</span><br><span class="line">            temp = temp-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(fast-&gt;next == <span class="literal">NULL</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(slow != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            temp-&gt;next = <span class="keyword">new</span> ListNode(slow-&gt;val);</span><br><span class="line">            temp = temp-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(slow-&gt;next == <span class="literal">NULL</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            slow = slow-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newHead-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1194,20 +1283,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
