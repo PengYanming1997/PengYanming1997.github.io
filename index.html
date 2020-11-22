@@ -197,6 +197,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/22/%E7%AC%AC216%E5%9C%BA%E5%91%A8%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%88%E5%95%86%E6%B1%A4%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ReTinaPeng">
+      <meta itemprop="description" content="记录一些生活中的小想法，以及工作进展 & tricks">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PengYanming1997">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/22/%E7%AC%AC216%E5%9C%BA%E5%91%A8%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%88%E5%95%86%E6%B1%A4%EF%BC%89/" class="post-title-link" itemprop="url">第216场周赛总结（商汤）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-22 21:52:24 / 修改时间：23:52:47" itemprop="dateCreated datePublished" datetime="2020-11-22T21:52:24+08:00">2020-11-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/%E5%91%A8%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">周赛</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="5605-检查两个字符串数组是否相等-Easy"><a href="#5605-检查两个字符串数组是否相等-Easy" class="headerlink" title="5605. 检查两个字符串数组是否相等. Easy"></a>5605. 检查两个字符串数组是否相等. Easy</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">arrayStringsAreEqual</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; word1, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; word2)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> s1 = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> s2 = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> w : word1)&#123;</span><br><span class="line">            s1 += w;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> w : word2)&#123;</span><br><span class="line">            s2 += w;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s1 == s2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5606-具有给定数值的最小字符串-Medium"><a href="#5606-具有给定数值的最小字符串-Medium" class="headerlink" title="5606. 具有给定数值的最小字符串. Medium"></a>5606. 具有给定数值的最小字符串. Medium</h2><h3 id="尽可能选择更多的小的字符-（如何进行判断-：-后续的字符都是z相加的和都小于所给的值）"><a href="#尽可能选择更多的小的字符-（如何进行判断-：-后续的字符都是z相加的和都小于所给的值）" class="headerlink" title="尽可能选择更多的小的字符 （如何进行判断 ： 后续的字符都是z相加的和都小于所给的值）"></a>尽可能选择更多的小的字符 （如何进行判断 ： 后续的字符都是z相加的和都小于所给的值）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">getSmallestString</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> ans = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=<span class="number">26</span>;i++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(k &lt;= <span class="number">26</span> * (n - <span class="number">1</span>) + i)&#123;</span><br><span class="line">                        ans += (i - <span class="number">1</span>) + <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">                        k -= i;</span><br><span class="line">                        flag = <span class="literal">true</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">                    ans += <span class="string">&#x27;z&#x27;</span>;</span><br><span class="line">                    k -= <span class="number">26</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans += (k - <span class="number">1</span>) + <span class="string">&#x27;a&#x27;</span>; </span><br><span class="line">            &#125;</span><br><span class="line">            n --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5607-生成平衡数组的方案数-Medium"><a href="#5607-生成平衡数组的方案数-Medium" class="headerlink" title="5607. 生成平衡数组的方案数. Medium"></a>5607. 生成平衡数组的方案数. Medium</h2><h3 id="根据奇数和偶数统计元素的和-每删除一个元素-对其前面的元素不会产生影响-但是其后面的奇偶性会颠倒-逐个判断"><a href="#根据奇数和偶数统计元素的和-每删除一个元素-对其前面的元素不会产生影响-但是其后面的奇偶性会颠倒-逐个判断" class="headerlink" title="根据奇数和偶数统计元素的和 每删除一个元素 对其前面的元素不会产生影响 但是其后面的奇偶性会颠倒 逐个判断"></a>根据奇数和偶数统计元素的和 每删除一个元素 对其前面的元素不会产生影响 但是其后面的奇偶性会颠倒 逐个判断</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">waysToMakeFair</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">temp</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> odds = <span class="number">0</span>; <span class="comment">// 奇数</span></span><br><span class="line">        <span class="keyword">int</span> even = <span class="number">0</span>; <span class="comment">//偶数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size() - <span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                even += nums[i];</span><br><span class="line">                temp[i] = even;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                odds += nums[i];</span><br><span class="line">                temp[i] = odds;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        odds = <span class="number">0</span>;</span><br><span class="line">        even = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;temp.size() - <span class="number">2</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(even + temp[i + <span class="number">1</span>] == odds + temp[i + <span class="number">2</span>])&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">                even += nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(odds + temp[i + <span class="number">1</span>] == even + temp[i + <span class="number">2</span>])&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">                odds += nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((temp.size() - <span class="number">2</span>) % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">             <span class="keyword">if</span>(even + temp[temp.size() - <span class="number">2</span> + <span class="number">1</span>] == odds)&#123;</span><br><span class="line">                 ans ++;</span><br><span class="line">             &#125;</span><br><span class="line">             even += nums[temp.size() - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(odds + temp[temp.size() - <span class="number">2</span> + <span class="number">1</span>] == even)&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">                odds += nums[temp.size() - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(odds == even)&#123;</span><br><span class="line">            ans ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5607-生成平衡数组的方案数-Medium-1"><a href="#5607-生成平衡数组的方案数-Medium-1" class="headerlink" title="5607. 生成平衡数组的方案数. Medium"></a>5607. 生成平衡数组的方案数. Medium</h2><h3 id="根据奇数和偶数统计元素的和-每删除一个元素-对其前面的元素不会产生影响-但是其后面的奇偶性会颠倒-逐个判断-1"><a href="#根据奇数和偶数统计元素的和-每删除一个元素-对其前面的元素不会产生影响-但是其后面的奇偶性会颠倒-逐个判断-1" class="headerlink" title="根据奇数和偶数统计元素的和 每删除一个元素 对其前面的元素不会产生影响 但是其后面的奇偶性会颠倒 逐个判断"></a>根据奇数和偶数统计元素的和 每删除一个元素 对其前面的元素不会产生影响 但是其后面的奇偶性会颠倒 逐个判断</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">waysToMakeFair</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">temp</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> odds = <span class="number">0</span>; <span class="comment">// 奇数</span></span><br><span class="line">        <span class="keyword">int</span> even = <span class="number">0</span>; <span class="comment">//偶数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size() - <span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                even += nums[i];</span><br><span class="line">                temp[i] = even;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                odds += nums[i];</span><br><span class="line">                temp[i] = odds;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        odds = <span class="number">0</span>;</span><br><span class="line">        even = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;temp.size() - <span class="number">2</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(even + temp[i + <span class="number">1</span>] == odds + temp[i + <span class="number">2</span>])&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">                even += nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(odds + temp[i + <span class="number">1</span>] == even + temp[i + <span class="number">2</span>])&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">                odds += nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((temp.size() - <span class="number">2</span>) % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">             <span class="keyword">if</span>(even + temp[temp.size() - <span class="number">2</span> + <span class="number">1</span>] == odds)&#123;</span><br><span class="line">                 ans ++;</span><br><span class="line">             &#125;</span><br><span class="line">             even += nums[temp.size() - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(odds + temp[temp.size() - <span class="number">2</span> + <span class="number">1</span>] == even)&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">                odds += nums[temp.size() - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(odds == even)&#123;</span><br><span class="line">            ans ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5608-完成所有任务的最少初始能量-Hard"><a href="#5608-完成所有任务的最少初始能量-Hard" class="headerlink" title="5608. 完成所有任务的最少初始能量. Hard"></a>5608. 完成所有任务的最少初始能量. Hard</h2><h3 id="找到规律-需要的和真实值之间差的越多且需要的值越大的越应该被优先选择-在这样的情况下的初始能量才是最少的"><a href="#找到规律-需要的和真实值之间差的越多且需要的值越大的越应该被优先选择-在这样的情况下的初始能量才是最少的" class="headerlink" title="找到规律 需要的和真实值之间差的越多且需要的值越大的越应该被优先选择 在这样的情况下的初始能量才是最少的"></a>找到规律 需要的和真实值之间差的越多且需要的值越大的越应该被优先选择 在这样的情况下的初始能量才是最少的</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minimumEffort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; tasks)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; special;</span><br><span class="line">        special.push_back(&#123;<span class="number">1</span>,<span class="number">1</span>&#125;);</span><br><span class="line">        special.push_back(&#123;<span class="number">1</span>,<span class="number">3</span>&#125;);</span><br><span class="line">        <span class="keyword">if</span>(tasks == special) <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pre = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; Map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;tasks.size();i++)&#123;</span><br><span class="line">            Map[tasks[i][<span class="number">1</span>] - tasks[i][<span class="number">0</span>]].push_back(tasks[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; :: reverse_iterator it;</span><br><span class="line">        <span class="keyword">for</span>(it = Map.rbegin();it != Map.rend();it++)&#123;</span><br><span class="line">            sort(it-&gt;second.begin(),it-&gt;second.end());</span><br><span class="line">            reverse(it-&gt;second.begin(),it-&gt;second.end());</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;it-&gt;second.size();i++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = it-&gt;second[i] - pre;</span><br><span class="line">                ans += temp;</span><br><span class="line">                pre = it-&gt;first;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/20/%E5%9B%9E%E6%BA%AF%E6%B3%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1242,88 +1321,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ReTinaPeng">
-      <meta itemprop="description" content="记录一些生活中的小想法，以及工作进展 & tricks">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PengYanming1997">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-16 11:14:13 / 修改时间：15:36:03" itemprop="dateCreated datePublished" datetime="2020-10-16T11:14:13+08:00">2020-10-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1388,7 +1390,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
